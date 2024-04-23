@@ -12,21 +12,30 @@
             margin: 0 auto;
             max-width: 80%;
         }
-        .imgGaleria{
+        .galeria div{
             text-align: center;
+        }
+        .formulario{
+            text-align: center;
+            margin: 20px;
         }
     </style>
 </head>
 <body>
     <h1 style="text-align: center;">Gálería de imágenes</h1>
-    <div class="galeria">
+    <div class="formulario">
+        <input type="text" id="imagenURL" placeholder="URL">
+        <input type="text" id="imagenDescripcion" placeholder="Descripción imagen">
+        <button onclick="agregarImagen()">Añadir imagen</button>
+    </div>
+    <div id="galeria" class="galeria">
         <div class="imgGaleria">
             <img src="img/1.jpeg" alt="Imagen 1" width="300" height="250">
             <p>Pie de foto 1</p>
         </div>
         <div class="imgGaleria">
             <img src="img/2.jpeg" alt="Imagen 2" width="300" height="250">
-            <p>Pie de foto 20</p>
+            <p>Pie de foto 2</p>
         </div>
         <div class="imgGaleria">
             <img src="img/3.jpeg" alt="Imagen 3" width="300" height="250">
@@ -37,5 +46,27 @@
             <p>Pie de foto 4</p>
         </div>
     </div>
+    <script>
+        function agregarImagen(){
+            var url=document.getElementById("imagenURL").value;
+            var pie=document.getElementById("imagenDescripcion").value;
+            if(url && pie){
+                var galeria=document.getElementById("galeria");
+                var div=document.createElement("div");
+                var img=document.createElement("img");
+                img.src=url;
+                img.width=300;
+                img.height=250;
+                var p=document.createElement("p");
+                p.textContent=pie;
+                div.appendChild(img);
+                div.appendChild(p);
+                galeria.appendChild(div);
+            }else{
+                alert("Introduce URL y/o descripción");
+            }
+
+        }
+    </script>
 </body>
 </html>

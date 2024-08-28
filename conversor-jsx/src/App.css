@@ -28,6 +28,21 @@
   color: #61dafb;
 }
 
+h1 {
+  text-align: center;
+}
+
+.centrar{
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.resultado{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

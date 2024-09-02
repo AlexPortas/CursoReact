@@ -1,12 +1,25 @@
+import logo from './logo.svg';
+import './App.css';
+import Contador from './components/Contador';
+
 const ComponenteSaludar=()=>{
   return (
     <div>Que hai??</div>
   );
 }
 
-const App=()=>{
+function App() {
   return (
-    <div><div><ComponenteSaludar></ComponenteSaludar></div><br/><div><ComponenteSaludar> </ComponenteSaludar></div></div>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          <ComponenteSaludar></ComponenteSaludar>
+        </p>
+        <Contador></Contador>
+      </header>
+    </div>
   );
 }
-export default App; 
+
+export default App;
